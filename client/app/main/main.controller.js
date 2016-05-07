@@ -27,6 +27,10 @@ class MainController {
       this.newThing = '';
     }
   }
+  // showThing(thing) {
+  //   console.log(thing._id);
+  //   this.$http.show('/api/things/' + thing._id);
+  // }
 
   deleteThing(thing) {
     this.$http.delete('/api/things/' + thing._id);
