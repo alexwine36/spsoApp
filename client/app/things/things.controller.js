@@ -13,10 +13,6 @@ class ThingsComponent {
       socket.unsyncUpdates('thing');
     });
     
-    // $scope.toggleEdit = function(index){
-    //   this.awesomeThings[index].edit = !this.awesomeThings[index].edit;
-    // };
-    
   }
 
   $onInit() {
@@ -32,10 +28,6 @@ class ThingsComponent {
       this.newThing = '';
     }
   }
-  // showThing(thing) {
-  //   console.log(thing._id);
-  //   this.$http.show('/api/things/' + thing._id);
-  // }
 
   deleteThing(thing) {
     this.$http.delete('/api/things/' + thing._id);
