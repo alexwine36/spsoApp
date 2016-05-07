@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="row">
+        <!--   <div class="col-lg-12">-->
+        <!--     <h1 class="page-header">Features:</h1>-->
+        <!--     <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in $ctrl.awesomeThings">-->
+        <!--       <li>-->
+        <!--       {{thing.name}}-->
+        <!--       <hr>-->
+        <!--       {{thing.info}}-->
+        <!--       <button type="button" class="close" ng-click="$ctrl.deleteThing(thing)">&times;</button></li>-->
+        <!--       <br>-->
+        <!--     </ul>-->
+        <!--   </div>-->
+        <!-- </div>-->
+        <!--</div>-->
+
+        <h1 class="page-header">Features:</h1>
+
+        <table class="table">
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Info
+                </th>
+                <th>
+                    Actions
+                </th>
+            </tr>
+            <tr ng-repeat="thing in $ctrl.awesomeThings">
+                <td ng-hide="thing.edit">{{thing.name}}</td>
+                <td ng-show="thing.edit">
+                    <input type="text" class="form-control" ng-model="thing.name" />
+                </td>
+                <td ng-hide="thing.edit">{{thing.info}}</td>
+                <td ng-show="thing.edit">
+                    <input type="text" class="form-control" ng-model="thing.info" />
+                </td>
+
+
+                <td>
+                    <div ng-hide="thing.edit" class="btn-group-vertical" role="group">
+                        <button class="btn btn-default glyphicon glyphicon-pencil" type="button" aria-hidden="true" ng-click="$ctrl.toggleEdit(thing)"></button>
+                        <button class="btn btn-default glyphicon glyphicon-remove" type="button" aria-hidden="true" ng-click="$ctrl.deleteThing(thing)"></button>
+                    </div>
+                    <div ng-show="thing.edit" class="btn-group-vertical" role="group">
+                        <button class="btn btn-default glyphicon glyphicon-saved" type="button" aria-hidden="true" ng-click="$ctrl.saveThing(thing)"></button>
+                        <button class="btn btn-default glyphicon glyphicon-remove" type="button" aria-hidden="true" ng-click="$ctrl.toggleEdit(thing)"></button>
+                    </div>
+                </td>
+            </tr>
+        </table>
